@@ -84,6 +84,7 @@ turnDisplay.innerHTML = "Wait";
           isValid = false;
         }
         playGameMulti(socket);
+        startButton.classList.add("disable");
       } else {
         const infoDisplay = document.createElement("h3");
         infoDisplay.classList = "form__message--error";
