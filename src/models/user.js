@@ -1,7 +1,7 @@
 export const handleLogin = async (username, password) => {
   try {
     const { data } = await axios.post(
-      `http://sea-battle-server-production.up.railway.app/auth/login`,
+      `https://sea-battle-server-production.up.railway.app/auth/login`,
       {
         username,
         password,
@@ -19,7 +19,7 @@ export const handleLogin = async (username, password) => {
 export const handleRegistration = async (username, password) => {
   try {
     const { data } = await axios.post(
-      `http://sea-battle-server-production.up.railway.app/auth/registration`,
+      `https://sea-battle-server-production.up.railway.app/auth/registration`,
       { username, password }
     );
     location.href = "/login";
