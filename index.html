@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sea Battle Online</title>
+    <link rel="stylesheet" href="/public/css/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,regular,italic,700,900,900italic&display=swap"
+      rel="stylesheet"
+    />
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <nav class="nav">
+        <div class="container nav__inner">
+          <a href="/" class="nav__link button" data-link>
+            <img
+              src="/public/img/icons/home.svg"
+              alt="home"
+              width="30px"
+              height="30px"
+            />
+          </a>
+          <a href="/menu" class="nav__link button" data-link>Game</a>
+        </div>
+      </nav>
+      <div id="app"></div>
+    </div>
+
+    <script type="module" src="/src/routes/router.js"></script>
+  </body>
+</html>
