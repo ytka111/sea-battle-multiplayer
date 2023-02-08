@@ -3,7 +3,7 @@ const app = express();
 const http = require("http").Server(app);
 const io = require("socket.io")(http);
 const path = require("path");
-const PORT = 1338;
+const PORT = process.env.PORT || config.get("serverPort");
 
 app.use("/src", express.static(path.resolve(__dirname, "src")));
 app.use("/public", express.static(path.resolve(__dirname, "public")));
