@@ -18,6 +18,7 @@ export const gameStart = () => {
   let currentPlayer = "user";
   let allShipsPlaced = false;
   const width = 10;
+turnDisplay.innerHTML = "Wait";
 
   function createBoard(grid, squares) {
     for (let i = 0; i < width * width; i++) {
