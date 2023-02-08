@@ -14,18 +14,15 @@ export default class extends AbstractView {
               <h1 class="form__title block__title">Create Account</h1>
               <div class="form__input-group">
                   <input type="text" id="signupUsername" class="form__input" autofocus placeholder="Username">
-                  <div class="form__input-error-message">error</div>
               </div>
               <div class="form__input-group">
                   <input type="password" id="password" class="form__input" autofocus placeholder="Password">
-                  <div class="form__input-error-message">error</div>
               </div>
               <div class="form__input-group">
                   <input type="password" id="passwordConfirm" class="form__input" autofocus placeholder="Confirm password">
-                  <div class="form__input-error-message">error</div>
               </div>
               <button class="form__button button block__button" type="submit">Continue</button>
-              <div class="form__message form__message--error">error</div>
+              <div class="form__message form__message--error"></div>
               <p class="form__text">
                   <a class="form__link" href="/login" data-link id="linkLogin">Sign in</a>
               </p>
