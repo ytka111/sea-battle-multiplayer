@@ -411,6 +411,7 @@ turnDisplay.innerHTML = "Wait";
     if (isGameOver) return;
     if (currentPlayer === "user") {
       turnDisplay.innerHTML = "Your Go";
+      startButton.setAttribute("disabled", "");
       computerSquares.forEach((square) =>
         square.addEventListener("click", function (e) {
           revealSquare(square);
