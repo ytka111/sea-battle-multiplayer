@@ -31,6 +31,7 @@ export const gameStart = (id) => {
   let username = JSON.parse(localStorage.getItem("data")).username;
   let enemyUsername = "";
   const roomId = id;
+turnDisplay.innerHTML = "Wait";
 
   function startMultiPlayer() {
     const socket = io();
