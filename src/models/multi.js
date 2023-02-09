@@ -536,14 +536,21 @@ turnDisplay.innerHTML = "Wait";
     }
   }
 
-  function checkForWins() {
+    async function checkForWins() {
     if (playerDestroyedCount === 20) {
       gameOver();
-      modal.style.display = "flex";
-      modal.querySelector("#modal-info").textContent = `YOU WIN`;
-      setTimeout(() => {
-        window.location.href = `/menu`;
-      }, 5000);
+      try {
+        const { data } = await axios.post(`http://sea-battle-server-production.up.railway.app/auth/win`, {
+          username,
+        });
+        modal.style.display = "flex";
+        modal.querySelector("#modal-info").textContent = `YOU WIN`;
+        setTimeout(() => {
+          window.location.href = `/menu`;
+        }, 5000);
+      } catch (error) {
+        console.error(error.response.data.message);
+      }
     }
     if (cpuDestroyedCount === 20) {
       gameOver();
