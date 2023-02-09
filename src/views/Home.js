@@ -56,7 +56,8 @@ export default class extends AbstractView {
     if (!username) return;
     document
       .querySelector(".form__button")
-      .addEventListener("click", async () => {
+      .addEventListener("click",(e) => {
+      e.preventDefault();
         localStorage.setItem("data", null);
       });
   }
