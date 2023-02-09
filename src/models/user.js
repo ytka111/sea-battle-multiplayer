@@ -15,12 +15,12 @@ export const handleLogin = async (username, password) => {
       infoDisplay.id = "info";
       infoDisplay.textContent = `${error.response.data.message}`;
     const button = document.querySelector(".form__button").textContent;
-      error.response.data.message;
     button.insertAdjacentElement("afterend", infoDisplay);
   }
 };
 
 export const handleRegistration = async (username, password) => {
+  let isValid = false;
   try {
     const { data } = await axios.post(
       `https://sea-battle-server-production.up.railway.app/auth/registration`,
@@ -33,7 +33,6 @@ export const handleRegistration = async (username, password) => {
       infoDisplay.id = "info";
       infoDisplay.textContent = `${error.response.data.message}`;
     const button = document.querySelector(".form__button").textContent;
-      error.response.data.message;
     button.insertAdjacentElement("afterend", infoDisplay);
   }
 };
