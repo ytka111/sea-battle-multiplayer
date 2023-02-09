@@ -10,9 +10,9 @@ export const handleLogin = async (username, password) => {
     localStorage.setItem("data", JSON.stringify(data));
     location.href = "/";
   } catch (error) {
+    if(infoDisplay)infoDisplay.remove();
     const infoDisplay = document.createElement("div");
       infoDisplay.classList = "form__message form__message--error";
-      infoDisplay.id = "info";
       infoDisplay.textContent = `${error.response.data.message}`;
     const button = document.querySelector(".form__button");
     button.insertAdjacentElement("afterend", infoDisplay);
@@ -28,9 +28,9 @@ export const handleRegistration = async (username, password) => {
     );
     location.href = "/login";
   } catch (error) {
-   const infoDisplay = document.createElement("div");
+     if(infoDisplay)infoDisplay.remove();
+    const infoDisplay = document.createElement("div");
       infoDisplay.classList = "form__message form__message--error";
-      infoDisplay.id = "info";
       infoDisplay.textContent = `${error.response.data.message}`;
     const button = document.querySelector(".form__button");
     button.insertAdjacentElement("afterend", infoDisplay);
