@@ -10,7 +10,7 @@ export const handleLogin = async (username, password) => {
     localStorage.setItem("data", JSON.stringify(data));
     location.href = "/";
   } catch (error) {
-    if(infoDisplay)infoDisplay.remove();
+    try{infoDisplay.remove();}catch(e){}
     const infoDisplay = document.createElement("div");
       infoDisplay.classList = "form__message form__message--error";
       infoDisplay.textContent = `${error.response.data.message}`;
@@ -28,7 +28,7 @@ export const handleRegistration = async (username, password) => {
     );
     location.href = "/login";
   } catch (error) {
-     if(infoDisplay)infoDisplay.remove();
+    try{infoDisplay.remove();}catch(e){}
     const infoDisplay = document.createElement("div");
       infoDisplay.classList = "form__message form__message--error";
       infoDisplay.textContent = `${error.response.data.message}`;
