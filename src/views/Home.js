@@ -29,6 +29,23 @@ export default class extends AbstractView {
   }
 
   async afterRender() {
+        try {
+      const { data } = await axios.get(`http://localhost:5001/auth/rating`);
+      const ratingList = document.querySelector(".rating");
+
+      data.sort((a, b) => b.wins - a.wins);
+
+      data.forEach((userData) => {
+        const li = document.createElement("li");
+        li.classList.add("rating__item");
+        li.textContent = `${userData.username}: ${userData.wins}`;
+        ratingList.appendChild(li);
+      });
+    } catch (error) {
+      console.error(error.response.data.message);
+      document.querySelector(".form__message--error").textContent =
+        error.response.data.message;
+    }
     if (!username) return;
     document
       .querySelector(".form__button")
