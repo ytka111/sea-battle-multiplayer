@@ -41,7 +41,8 @@ export default class extends AbstractView {
           "Passwords don't match";
         return;
       }
-      document.querySelector(".form__message--error").textContent = "";
+      try{document.querySelector(".form__message--error").textContent = "";
+         }catch(e){}
       await handleRegistration(username, password);
     });
   }
