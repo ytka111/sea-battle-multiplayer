@@ -60,5 +60,6 @@ export default class extends AbstractView {
       e.preventDefault();
         localStorage.setItem("data", null);
       });
+    window.location.href = `/login`
   }
 }
