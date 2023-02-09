@@ -13,7 +13,7 @@ export default class extends AbstractView {
     this.setTitle = "Home";
   }
   async getHtml() {
-    return `<div class="home__container container form__inner">
+    return `<div class="home__container container">
       ${
         username
           ? `<form class="form block" id="logout">
