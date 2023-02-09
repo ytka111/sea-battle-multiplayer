@@ -59,7 +59,8 @@ export default class extends AbstractView {
       .addEventListener("click",(e) => {
       e.preventDefault();
         localStorage.setItem("data", null);
+       window.location.href = `/login`
       });
-    window.location.href = `/login`
+   
   }
 }
