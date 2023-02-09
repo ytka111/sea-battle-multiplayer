@@ -19,7 +19,6 @@ export default class extends AbstractView {
                   <input type="password" class="form__input" autofocus placeholder="Password" id="password">
               </div>
               <button class="form__button block__button button" type="submit" id="">Continue</button>
-              <div class="form__message form__message--error"></div>
               <p class="form__text">
                   <a class="form__link" href="/register" data-link id="linkCreateAccount">Create account</a>
               </p>
