@@ -540,7 +540,7 @@ turnDisplay.innerHTML = "Wait";
     if (playerDestroyedCount === 20) {
       gameOver();
       try {
-        const { data } = await axios.post(`http://sea-battle-server-production.up.railway.app/auth/win`, {
+        const { data } = await axios.post(`https://sea-battle-server-production.up.railway.app/auth/win`, {
           username,
         });
         modal.style.display = "flex";
