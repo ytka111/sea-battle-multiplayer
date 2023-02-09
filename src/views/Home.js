@@ -37,7 +37,7 @@ export default class extends AbstractView {
 
   async afterRender() {
         try {
-      const { data } = await axios.get(`http://sea-battle-server-production.up.railway.app/auth/rating`);
+      const { data } = await axios.get(`https://sea-battle-server-production.up.railway.app/auth/rating`);
       const ratingList = document.querySelector(".rating");
 
       data.sort((a, b) => b.wins - a.wins);
