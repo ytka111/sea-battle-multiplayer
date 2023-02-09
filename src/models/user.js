@@ -14,7 +14,7 @@ export const handleLogin = async (username, password) => {
       infoDisplay.classList = "form__message form__message--error";
       infoDisplay.id = "info";
       infoDisplay.textContent = `${error.response.data.message}`;
-    const button = document.querySelector(".form__button").textContent;
+    const button = document.querySelector(".form__button");
     button.insertAdjacentElement("afterend", infoDisplay);
   }
 };
@@ -32,7 +32,7 @@ export const handleRegistration = async (username, password) => {
       infoDisplay.classList = "form__message form__message--error";
       infoDisplay.id = "info";
       infoDisplay.textContent = `${error.response.data.message}`;
-    const button = document.querySelector(".form__button").textContent;
+    const button = document.querySelector(".form__button");
     button.insertAdjacentElement("afterend", infoDisplay);
   }
 };
