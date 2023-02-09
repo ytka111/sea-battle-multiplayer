@@ -37,12 +37,20 @@ export default class extends AbstractView {
       const password = document.querySelector("#password").value;
       const passwordConfirm = document.querySelector("#passwordConfirm").value;
       if (password !== passwordConfirm) {
-        document.querySelector(".form__message--error").textContent =
-          "Passwords don't match";
+        const existingInfoDisplay = document.querySelector(".form__message--error");
+    if (existingInfoDisplay) {
+      existingInfoDisplay.remove();
+    }
+
+    const infoDisplay = document.createElement("div");
+    infoDisplay.classList = "form__message form__message--error";
+    infoDisplay.textContent = "Passwords don't match";
+    const button = document.querySelector(".form__button");
+    button.insertAdjacentElement("afterend", infoDisplay);
         return;
       }
-      try{document.querySelector(".form__message--error").textContent = "";
-         }catch(e){}
+       
+
       await handleRegistration(username, password);
     });
   }
